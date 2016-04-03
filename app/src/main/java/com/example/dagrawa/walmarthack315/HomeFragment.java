@@ -36,6 +36,7 @@ public class HomeFragment extends Fragment {
 
         dinesListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
+
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String item = String.valueOf(parent.getItemAtPosition(position));

@@ -44,7 +44,8 @@
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
-                android:text="Address"/>
+                android:text="Address"
+                 />
             <EditText android:id="@+id/Address"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +54,8 @@
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
-                android:text="Zip Code"/>
+                android:text="ZipCode"
+                />
             <EditText android:id="@+id/ZipCode"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -62,11 +64,31 @@
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
-                android:text="Address Type"/>
-            <EditText android:id="@+id/Atype"
+                android:text="City"
+                 />
+            <EditText android:id="@+id/CityName"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <Button android:id="@+id/CreateGroup"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                />
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="State"
+                 />
+            <EditText android:id="@+id/StateName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"/>
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Country"/>
+            <EditText android:id="@+id/CountryName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"/>
+            <Button android:id="@+id/CreateGroupButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
