@@ -41,7 +41,7 @@ public class MyOrdersFragment extends Fragment {
         setJsonValueInterface s = new setJsonValueInterface() {
             @Override
             public void SetJSONObject(JSONArray j) {
-                Log.i("deepak in My orders fragment", j.toString());
+                Log.i("Deepak in My orders fragment", j.toString());
                 for(int i=0;i<j.length();i++) {
                     try {
                         JSONObject ob = j.getJSONObject(i);
