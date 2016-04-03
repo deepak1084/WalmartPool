@@ -41,7 +41,7 @@ ArrayList<GroupDetail> creditArrayList=null;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View customView = inflater.inflate(R.layout.custom_row_credits, parent, false);
+        View customView = inflater.inflate(R.layout.joingroup_row, parent, false);
 
         TextView textView = (TextView) customView.findViewById(R.id.creditsListTextView);
         TextView textView2 = (TextView) customView.findViewById(R.id.credits);
