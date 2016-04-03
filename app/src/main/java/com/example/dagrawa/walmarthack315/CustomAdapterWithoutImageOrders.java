@@ -41,13 +41,17 @@ ArrayList<OrderDetail> creditArrayList=null;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View customView = inflater.inflate(R.layout.custom_row_credits, parent, false);
+        View customView = inflater.inflate(R.layout.orders_custom_row, parent, false);
 
-        TextView textView = (TextView) customView.findViewById(R.id.creditsListTextView);
-        TextView textView2 = (TextView) customView.findViewById(R.id.credits);
+        TextView textView = (TextView) customView.findViewById(R.id.orderNo);
+        TextView textView2 = (TextView) customView.findViewById(R.id.GroupIdRow);
+        TextView textView3 = (TextView) customView.findViewById(R.id.statusRow);
+        TextView textView4 = (TextView) customView.findViewById(R.id.ShippingCostRow);
 
         textView.setText(creditArrayList.get(position).getOrderNo());
-        textView2.setText("DEEPAK"+ creditArrayList.get(position).getShipCost());
+        textView2.setText(creditArrayList.get(position).getGrpId());
+        textView3.setText(creditArrayList.get(position).getStatus());
+        textView4.setText(creditArrayList.get(position).getShipDiscount());
 
         return customView;
     }

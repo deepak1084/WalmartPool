@@ -45,7 +45,7 @@ public class MyOrdersFragment extends Fragment {
                 for(int i=0;i<j.length();i++) {
                     try {
                         JSONObject ob = j.getJSONObject(i);
-                        arrayList.add(new OrderDetail(ob.getString("order_no"),ob.getString("order_no"),ob.getString("order_no"),ob.getString("order_no"),ob.getString("order_no"),ob.getString("order_no"),ob.getString("order_no")));
+                        arrayList.add(new OrderDetail(ob.getString("order_no"),ob.getString("group_id"),ob.getString("status"),ob.getString("shipping_method"),ob.getString("ship_discount"),ob.getString("ship_cost"),ob.getString("total_amount")));
                         ListAdapter myAdapter = new CustomAdapterWithoutImageOrders(context,arrayList);
                         ListView listView = (ListView) root.findViewById(R.id.listView);
 

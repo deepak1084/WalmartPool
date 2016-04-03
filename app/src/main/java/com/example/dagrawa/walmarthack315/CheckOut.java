@@ -30,6 +30,7 @@ public class CheckOut extends Activity {
     TextView tt3;
     Double total_price;
 Context con= null;
+    boolean normal = true;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         con = this;
@@ -61,7 +62,7 @@ Context con= null;
                 Double total = total_price + 15.0;
                 Math.round(total);
                 tt3.setText("$" + String.valueOf(Math.round(total)));
-
+                normal = false;
 
             }
         });
@@ -73,7 +74,7 @@ Context con= null;
                 Double total = total_price +5.0;
                 Math.round(total);
                 tt3.setText("$" +String.valueOf(Math.round(total)));
-
+                normal= true;
             }
         });
 
@@ -113,6 +114,7 @@ Context con= null;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(con,ShippingCart.class);
+                intent.putExtra("ShippingMethod",normal);
                 startActivity(intent);
             }
         });
