@@ -38,7 +38,29 @@
             android:layout_marginLeft="10dp" />
     </RelativeLayout>
 
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="180dp"
+            android:height="30dp"
+            android:text="Group ID"
+            android:id="@+id/groupIdHeader"
+            android:gravity="center"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="180dp"
+            android:height="30dp"
+            android:text="Group Address"
+            android:id="@+id/groupAddressHeader"
+            android:gravity="center"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
     <ListView
@@ -61,9 +83,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Subscribe to Selected Groups"
-        android:layout_above="@+id/SubscribeGroups"
+        android:layout_above="@+id/groupsSubscribed"
         android:id="@+id/subscribebutton"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible" />
 
 </LinearLayout>

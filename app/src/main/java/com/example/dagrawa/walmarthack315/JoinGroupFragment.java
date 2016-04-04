@@ -33,7 +33,7 @@ public class JoinGroupFragment extends Fragment{
     Activity context;
     public JoinGroupFragment(){}
     EditText et = null;
-
+    Button subs = null;
     String groupsToSend= "";
     String addressToSend = "";
 
@@ -44,7 +44,7 @@ public class JoinGroupFragment extends Fragment{
         View rootView = inflater.inflate(R.layout.joingroup, container, false);
         root = rootView;
         context = this.getActivity();
-        Button subs = (Button)rootView.findViewById(R.id.SubscribeGroups);
+        subs = (Button)rootView.findViewById(R.id.subscribebutton);
 
         subs.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -69,6 +69,7 @@ public class JoinGroupFragment extends Fragment{
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                subs.setVisibility(View.VISIBLE);
                 final ArrayList<GroupDetail> arrayList = new ArrayList<>();
                 setJsonValueInterface s = new setJsonValueInterface() {
                     @Override
@@ -83,7 +84,7 @@ public class JoinGroupFragment extends Fragment{
                                     arrayList.add(new GroupDetail(adr[in],et.getText().toString(),grpId[in]));
                                 }
                                 ListAdapter myAdapter = new CustomAdapterWithoutImageJoinFragment(context, arrayList);
-                                ListView listView = (ListView) root.findViewById(R.id.listView);
+                                ListView listView = (ListView) root.findViewById(R.id.groupsSubscribed);
 
                                 listView.setAdapter(myAdapter);
 

@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
                             tt.setText(String.valueOf(TotalPrice));
                         }
 //                        Toast.makeText(getContext(), item, Toast.LENGTH_LONG).show();
-                        Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
                     }
                 }
         );

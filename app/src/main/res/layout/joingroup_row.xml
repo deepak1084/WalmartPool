@@ -9,7 +9,7 @@
         android:width="180dp"
         android:height="30dp"
         android:text="New Text"
-        android:id="@+id/groupId"
+        android:id="@+id/groupIdJoin"
         android:gravity="center" />
 
     <TextView

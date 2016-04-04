@@ -43,11 +43,11 @@ ArrayList<GroupDetail> creditArrayList=null;
     public View getView(int position, View convertView, ViewGroup parent) {
         View customView = inflater.inflate(R.layout.joingroup_row, parent, false);
 
-        TextView textView = (TextView) customView.findViewById(R.id.creditsListTextView);
-        TextView textView2 = (TextView) customView.findViewById(R.id.credits);
+        TextView textView = (TextView) customView.findViewById(R.id.groupIdJoin);
+        TextView textView2 = (TextView) customView.findViewById(R.id.groupAddress);
 
         textView.setText(creditArrayList.get(position).getGrp());
-        textView2.setText("DEEPAK"+ creditArrayList.get(position).getAddresses());
+        textView2.setText(creditArrayList.get(position).getAddresses());
 
         return customView;
     }

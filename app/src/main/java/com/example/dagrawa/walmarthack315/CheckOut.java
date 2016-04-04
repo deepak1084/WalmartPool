@@ -29,6 +29,7 @@ public class CheckOut extends Activity {
     TextView tt2 ;
     TextView tt3;
     Double total_price;
+    Double total;
 Context con= null;
     boolean normal = true;
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,15 +52,16 @@ Context con= null;
         RadioButton rr = (RadioButton)findViewById(R.id.radioButton);
         RadioButton rr2 = (RadioButton)findViewById(R.id.radioButton2);
         tt2.setText("$15");
-        Double total = total_price +15.0;
+        total = total_price +15.0;
         Math.round(total);
+
         tt3.setText("$" + String.valueOf(Math.round(total)));
         rr.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 tt2.setText("$15");
-                Double total = total_price + 15.0;
+                 total= total_price + 15.0;
                 Math.round(total);
                 tt3.setText("$" + String.valueOf(Math.round(total)));
                 normal = false;
@@ -71,9 +73,9 @@ Context con= null;
             @Override
             public void onClick(View v) {
                 tt2.setText("$5");
-                Double total = total_price +5.0;
+                total = total_price +5.0;
                 Math.round(total);
-                tt3.setText("$" +String.valueOf(Math.round(total)));
+                tt3.setText("$" + String.valueOf(Math.round(total)));
                 normal= true;
             }
         });
@@ -115,6 +117,7 @@ Context con= null;
             public void onClick(View v) {
                 Intent intent = new Intent(con,ShippingCart.class);
                 intent.putExtra("ShippingMethod",normal);
+                intent.putExtra("TotalPrice", total);
                 startActivity(intent);
             }
         });

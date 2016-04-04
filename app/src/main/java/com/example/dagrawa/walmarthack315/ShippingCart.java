@@ -17,24 +17,31 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ShippingCart extends Activity implements
-        View.OnClickListener {
+public class ShippingCart extends Activity
+         {
     Button button;
     ListView listView;
     ArrayAdapter<String> adapter;
-    Context con =null;
-
-    /** Called when the activity is first created. */
+    Activity con =null;
+    String str = null;
+    Double totalPrice = 0.0;
+Integer shipCost = 0;
+             Integer waitTime = 0;
+             /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         boolean flag = getIntent().getExtras().getBoolean("ShippingMethod");
+         totalPrice = getIntent().getExtras().getDouble("TotalPrice");
+
+        con = this;
 
         setContentView(R.layout.contentshippinglayout);
-        con = this;
+
         findViewsById();
 
         setJsonValueInterface s = new setJsonValueInterface() {
@@ -56,48 +63,77 @@ public class ShippingCart extends Activity implements
 
             }
         };
-        String str = null;
+
         if(flag == true) {
             str = "standard";
+            shipCost = 5;
+            waitTime = 1;
         }else {
             str = "expedite";
+            shipCost = 15;
+            waitTime = 5;
         }
         new ShippingCartGroupFetch(s,str).execute();
-        button.setOnClickListener(this);
-        Button but = (Button) findViewById(R.id.button);
+//        button.setOnClickListener(this);
+        Button but = (Button) findViewById(R.id.submitToPersonal);
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_SHORT);
+                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_LONG).show();
+            }
+        });
+        Button subComm = (Button) findViewById(R.id.submitToCommunity);
+        subComm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_LONG).show();
+                SparseBooleanArray checked = listView.getCheckedItemPositions();
+                ArrayList<String> selectedItems = new ArrayList<String>();
+                for (int i = 0; i < checked.size(); i++) {
+                    // Item position in adapter
+                    int position = checked.keyAt(i);
+                    // Add sport if it is checked i.e.) == TRUE!
+                    if (checked.valueAt(i))
+                        selectedItems.add(adapter.getItem(position));
+                }
+
+                String[] outputStrArr = new String[selectedItems.size()];
+
+                for (int i = 0; i < selectedItems.size(); i++) {
+                    outputStrArr[i] = selectedItems.get(i);
+                }
+                String outputArrayAsString = "";
+                for(int i=0;i<outputStrArr.length;i++) {
+                    Log.i("Deepak", outputStrArr[i]);
+                    outputArrayAsString +=outputStrArr[i]+",";
+                }
+                JSONObject j = new JSONObject();
+                try {
+                    j.put("user_id","dagrawa");
+                    j.put("status","InProcess");
+                    j.put("zip_code","560034");
+                    j.put("group_id","grp1");
+                    j.put("subc_groups",outputArrayAsString.substring(0,outputArrayAsString.length()-1));
+                    j.put("shipping_method",str);
+                    j.put("ship_cost",shipCost);
+                    j.put("ship_discount",0);
+                    j.put("total_amount",totalPrice);
+                    j.put("wait_time",waitTime);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+        new ShippingCartGroupPost().execute(j);
+
             }
         });
     }
 
     private void findViewsById() {
         listView = (ListView) findViewById(R.id.list);
-        button = (Button) findViewById(R.id.button2);
-    }
-
-    public void onClick(View v) {
-        Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_SHORT);
-        SparseBooleanArray checked = listView.getCheckedItemPositions();
-        ArrayList<String> selectedItems = new ArrayList<String>();
-        for (int i = 0; i < checked.size(); i++) {
-            // Item position in adapter
-            int position = checked.keyAt(i);
-            // Add sport if it is checked i.e.) == TRUE!
-            if (checked.valueAt(i))
-                selectedItems.add(adapter.getItem(position));
-        }
-
-        String[] outputStrArr = new String[selectedItems.size()];
-
-        for (int i = 0; i < selectedItems.size(); i++) {
-            outputStrArr[i] = selectedItems.get(i);
-        }
-
-        Log.i("Deepak", outputStrArr.toString());
-//        new ShippingCartGroupPost(JSONOBEJCT).execute();
 
     }
+
+
 }
