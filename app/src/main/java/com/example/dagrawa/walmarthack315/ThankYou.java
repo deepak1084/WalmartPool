@@ -3,22 +3,22 @@ package com.example.dagrawa.walmarthack315;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
-public class ThankYouPage extends Activity {
-    Context con = null;
+/**
+ * Created by sushant on 4/16/16.
+ */
+public class ThankYou extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thank_you_page);
-        Button b = (Button) findViewById(R.id.ShareOrder);
-        con = this;
-        b.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.thank_you);
+
+        ImageView shareImage =  (ImageView) findViewById(R.id.share_image);
+        shareImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
@@ -28,12 +28,6 @@ public class ThankYouPage extends Activity {
                 startActivity(sendIntent);
             }
         });
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        this.finish();
     }
 
 }

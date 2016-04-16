@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Thank you for using Myntra Pool"
+        android:textSize="16dp"
+        android:id="@+id/thankYouBar"
+        android:layout_below="@+id/user_pref"
+        android:background="@drawable/button"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
+        android:textAlignment="gravity"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:textColor="#ffffff" />
+
+
+        <TextView
+            android:id="@+id/shareLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thankYouBar"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:textSize="17dp"
+            android:text="Share"/>
+
+        <ImageView
+            android:id="@+id/share_image"
+            android:layout_width="20pt"
+            android:layout_height="20pt"
+            android:scaleType="center"
+            android:layout_below="@+id/thankYouBar"
+            android:layout_toRightOf="@+id/shareLabel"
+            android:src="@android:drawable/ic_menu_share"/>
+
+</RelativeLayout>
