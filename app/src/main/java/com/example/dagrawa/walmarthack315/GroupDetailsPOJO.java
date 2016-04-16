@@ -11,16 +11,27 @@ public class GroupDetailsPOJO {
     private String address;
     private float total;
 
+    public boolean isBox() {
+        return box;
+    }
+
+    public void setBox(boolean box) {
+        this.box = box;
+    }
+
+    private boolean box;
+
     public GroupDetailsPOJO(){
         super();
     }
 
-    public GroupDetailsPOJO(String id, String ownerName, String name, String address, float total) {
+    public GroupDetailsPOJO(String id, String ownerName, String name, String address, float total,boolean box) {
         this.id = id;
         this.ownerName = ownerName;
         this.name = name;
         this.address = address;
         this.total = total;
+        this.box = box;
     }
 
     public String getId() {

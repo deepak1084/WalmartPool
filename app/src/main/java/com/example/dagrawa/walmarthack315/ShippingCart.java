@@ -70,6 +70,13 @@ public class ShippingCart extends Activity
 //                }
 
 //            Log.i("Deepak under cli",valuesGroups.toString());
+
+                for (int i=0; i<sports.size(); i++) {
+                    if (sports.get(i).isBox()){
+                        valuesGroups.add(sports.get(i).getId());
+                    }
+                }
+
                 String groupsSubs = "";
                 for(int i=0;i<valuesGroups.size();i++) {
                     groupsSubs+= valuesGroups.get(i);
@@ -106,22 +113,22 @@ public class ShippingCart extends Activity
                     sports = new ArrayList<>();
                     for (int i = 0; i < j.length(); i++) {
                         try {
-                            sports.add(new GroupDetailsPOJO(j.getJSONObject(i).getString("group_id"),"Deepak",j.getJSONObject(i).getString("name"),j.getJSONObject(i).getString("address"),Float.parseFloat(j.getJSONObject(i).getString("group_total"))));
+                            sports.add(new GroupDetailsPOJO(j.getJSONObject(i).getString("group_id"),"Deepak",j.getJSONObject(i).getString("name"),j.getJSONObject(i).getString("address"),Float.parseFloat(j.getJSONObject(i).getString("group_total")),false));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
 
                     listAdapter = new CustomListAdapterForSubscribedList(con, sports);
-                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Log.i("Position clicked",position+"");
-                            GroupDetailsPOJO g = (GroupDetailsPOJO) parent.getItemAtPosition(position);
-
-                        valuesGroups.add(g.getId());
-                        }
-                    });
+//                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                        @Override
+//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                            Log.i("Position clicked",position+"");
+//                            GroupDetailsPOJO g = (GroupDetailsPOJO) parent.getItemAtPosition(position);
+//
+//                        valuesGroups.add(g.getId());
+//                        }
+//                    });
 
                     listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     listView.setAdapter(listAdapter);
