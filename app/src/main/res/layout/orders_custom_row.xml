@@ -1,46 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="90dp"
-        android:height="30dp"
-        android:text="New Text"
-        android:id="@+id/orderNo"
-        android:gravity="center" />
+        android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/orderNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Order Id"
+            android:textSize="50px"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/OrderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80px"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Order Date"
+            android:textSize="50px"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/OrderAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60px"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Order Amount"
+            android:textSize="50px"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="90dp"
-        android:height="30dp"
-        android:text="New Text"
-        android:id="@+id/GroupIdRow"
-        android:gravity="center" />
+        android:layout_marginTop="30px">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/orderNoValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:text="12345"
+            android:textSize="50px"/>
+
+        <TextView
+            android:id="@+id/OrderDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="160px"
+            android:layout_marginTop="5px"
+            android:text="16 Apr 2016"
+            android:textSize="50px"/>
+
+        <TextView
+            android:id="@+id/OrderAmountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120px"
+            android:layout_marginTop="5px"
+            android:text="1234/-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="90dp"
-        android:height="30dp"
-        android:text="New Text"
-        android:id="@+id/statusRow"
-        android:gravity="center" />
+        android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="90dp"
+            android:height="30dp"
+            android:gravity="center"
+            android:text= "Status     ->"
+            android:textSize="60px"
+            android:textColor="#009900"
+            android:textStyle="bold"
+            android:layout_weight="0.21" />
+
+        <TextView
+            android:id="@+id/StatusValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="90dp"
+            android:height="30dp"
+            android:gravity="center"
+            android:text= "Packed"
+            android:textSize="60px"
+            android:textColor="#cc9966"
+            android:textStyle="bold"
+            android:layout_weight="0.08" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:width="90dp"
-        android:height="30dp"
-        android:text="New Text"
-        android:id="@+id/ShippingCostRow"
-        android:gravity="center" />
+        android:weightSum="1">
 
+        <TextView
+            android:id="@+id/Group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:width="150px"
+            android:height="30dp"
+            android:gravity="center"
+            android:text= "Groups"
+            android:textSize="60px"
+            android:textColor="#009900"
+            android:textStyle="bold"
+            android:layout_weight="0.21" />
 
+        <TextView
+            android:id="@+id/GroupValue"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:width="90dp"
+            android:height="30dp"
+            android:gravity="center"
+            android:text= "Friends,Livspace,Kormangala"
+            android:textSize="60px"
+            android:textColor="#cc9966"
+            android:textStyle="bold"
+            android:layout_weight="0.60" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:weightSum="1">-->
+
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progressBar1"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="24dp"-->
+
+            <!--android:layout_margin="5dip"-->
+            <!--android:layout_weight="20.13" />-->
+
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,7 +28,7 @@ public class ShippingCartGroupFetch extends AsyncTask<Void,Void,JSONArray> {
         JSONArray j = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://172.16.100.234:8081/orderbygrps/560034/"+shippingMethod);
+            url = new URL("http://10.0.12.186:3000/fetch_group?user_id=1");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
 
@@ -45,7 +46,10 @@ public class ShippingCartGroupFetch extends AsyncTask<Void,Void,JSONArray> {
 
             br.close();
             String retString=new String(sb.toString());
-            j = new JSONArray(retString);
+            JSONObject ob = new JSONObject(retString);
+            if(ob!=null) {
+                j = ob.getJSONArray("groups");
+            }
             Log.i("deepak",retString);
 
     } catch (Exception e) {

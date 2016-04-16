@@ -43,15 +43,21 @@ ArrayList<OrderDetail> creditArrayList=null;
     public View getView(int position, View convertView, ViewGroup parent) {
         View customView = inflater.inflate(R.layout.orders_custom_row, parent, false);
 
-        TextView textView = (TextView) customView.findViewById(R.id.orderNo);
-        TextView textView2 = (TextView) customView.findViewById(R.id.GroupIdRow);
-        TextView textView3 = (TextView) customView.findViewById(R.id.statusRow);
-        TextView textView4 = (TextView) customView.findViewById(R.id.ShippingCostRow);
 
-        textView.setText(creditArrayList.get(position).getOrderNo());
-        textView2.setText(creditArrayList.get(position).getGrpId());
-        textView3.setText(creditArrayList.get(position).getStatus());
-        textView4.setText(creditArrayList.get(position).getShipDiscount());
+        TextView orderIdText = (TextView) customView.findViewById(R.id.orderNoValue);
+        TextView dateText = (TextView) customView.findViewById(R.id.OrderDateValue);
+        TextView orderAmtText = (TextView) customView.findViewById(R.id.OrderAmountValue);
+        TextView status = (TextView) customView.findViewById(R.id.StatusValue);
+        TextView grps = (TextView) customView.findViewById(R.id.GroupValue);
+
+
+
+        orderIdText.setText(creditArrayList.get(position).getOrderId());
+        dateText.setText(creditArrayList.get(position).getOrderDate());
+        orderAmtText.setText(creditArrayList.get(position).getOrderAmount());
+
+        status.setText(creditArrayList.get(position).getStatus());
+        grps.setText(creditArrayList.get(position).getGroups());
 
         return customView;
     }

@@ -47,20 +47,22 @@ Integer shipCost = 0;
         setJsonValueInterface s = new setJsonValueInterface() {
             @Override
             public void SetJSONObject(JSONArray j) {
-                ArrayList<String> sports = new ArrayList<>();
-                for (int i = 0; i < j.length(); i++) {
-                    try {
-                        sports.add(j.getJSONObject(i).getString("group_id"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                if (j != null) {
+                    ArrayList<String> sports = new ArrayList<>();
+                    for (int i = 0; i < j.length(); i++) {
+                        try {
+                            sports.add(j.getJSONObject(i).getString("group_id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
+
+                    adapter = new ArrayAdapter<String>(con,
+                            android.R.layout.simple_list_item_multiple_choice, sports);
+                    listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+                    listView.setAdapter(adapter);
+
                 }
-
-                adapter = new ArrayAdapter<String>(con,
-                        android.R.layout.simple_list_item_multiple_choice, sports);
-                listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-                listView.setAdapter(adapter);
-
             }
         };
 

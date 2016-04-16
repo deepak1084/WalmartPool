@@ -4,22 +4,60 @@ package com.example.dagrawa.walmarthack315;
  * Created by dagrawa on 4/3/16.
  */
 public class OrderDetail {
-    String orderNo;
 
-    public String getGrpId() {
-        return grpId;
+
+
+    String orderId;
+
+    String orderDate;
+    String orderAmount;
+    String status;
+    String groups;
+    String savings;
+
+    public String getSavings() {
+        return savings;
     }
 
-    public void setGrpId(String grpId) {
-        this.grpId = grpId;
+    public void setSavings(String savings) {
+        this.savings = savings;
     }
 
-    public String getOrderNo() {
-        return orderNo;
+    public OrderDetail(String orderId, String orderDate, String orderAmount, String status, String groups, String shipCost,String sav) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.orderAmount = orderAmount;
+        this.status = status;
+        this.groups = groups;
+        this.shipCost = shipCost;
+        this.savings = sav;
+
     }
 
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo;
+    String shipCost;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getOrderAmount() {
+        return orderAmount;
+    }
+
+    public void setOrderAmount(String orderAmount) {
+        this.orderAmount = orderAmount;
     }
 
     public String getStatus() {
@@ -30,20 +68,12 @@ public class OrderDetail {
         this.status = status;
     }
 
-    public String getShippingMethod() {
-        return shippingMethod;
+    public String getGroups() {
+        return groups;
     }
 
-    public void setShippingMethod(String shippingMethod) {
-        this.shippingMethod = shippingMethod;
-    }
-
-    public String getShipDiscount() {
-        return shipDiscount;
-    }
-
-    public void setShipDiscount(String shipDiscount) {
-        this.shipDiscount = shipDiscount;
+    public void setGroups(String groups) {
+        this.groups = groups;
     }
 
     public String getShipCost() {
@@ -52,30 +82,5 @@ public class OrderDetail {
 
     public void setShipCost(String shipCost) {
         this.shipCost = shipCost;
-    }
-
-    public String getShipTotal() {
-        return shipTotal;
-    }
-
-    public void setShipTotal(String shipTotal) {
-        this.shipTotal = shipTotal;
-    }
-
-    String grpId;
-    String status;
-    String shippingMethod;
-    String shipDiscount;
-    String shipCost;
-    String shipTotal;
-
-    public OrderDetail(String orderNo, String grpId, String status, String shippingMethod, String shipDiscount, String shipCost, String shipTotal) {
-        this.orderNo = orderNo;
-        this.grpId = grpId;
-        this.status = status;
-        this.shippingMethod = shippingMethod;
-        this.shipDiscount = shipDiscount;
-        this.shipCost = shipCost;
-        this.shipTotal = shipTotal;
     }
 }
