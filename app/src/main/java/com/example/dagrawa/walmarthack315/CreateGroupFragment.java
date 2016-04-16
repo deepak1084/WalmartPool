@@ -47,16 +47,15 @@ public class CreateGroupFragment extends Fragment {
             public void onClick(View v) {
                 JSONObject j = new JSONObject();
                 try {
-                    j.put("zip_code",zipCode.getText());
+                    j.put("zip",zipCode.getText());
                     j.put("country",countryName.getText());
                     j.put("state",stateName.getText());
-                    j.put("state",stateName.getText());
                     j.put("city", city.getText());
-                    j.put("addressline1", address.getText());
+                    j.put("address", address.getText());
                     j.put("group_id",groupId.getText());
-                    j.put("user_id","dagrawa");
-                    j.put("last_name",groupName.getText());
-                    j.put("first_name","DEEPAK");
+                    j.put("user_id","1");
+                    j.put("name",groupName.getText());
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -24,7 +24,7 @@ public class CreateGroupAsyncCall extends AsyncTask<JSONObject,Void,Void> {
         URL url = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://172.16.100.234:8081/users/");
+            url = new URL("http://10.0.12.186:3000/groups");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json");
