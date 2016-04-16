@@ -52,7 +52,7 @@ Context con= null;
         RadioButton rr = (RadioButton)findViewById(R.id.radioButton);
         RadioButton rr2 = (RadioButton)findViewById(R.id.radioButton2);
         tt2.setText("Rs.250");
-        total = total_price +250.0;
+//        total = total_price +250.0;
         Math.round(total);
 
         tt3.setText("Rs" + String.valueOf(Math.round(total)));
@@ -61,7 +61,7 @@ Context con= null;
             @Override
             public void onClick(View v) {
                 tt2.setText("Rs.250");
-                 total= total_price + 250.0;
+//                 total= total_price + 250.0;
                 Math.round(total);
                 tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal = false;
@@ -73,7 +73,7 @@ Context con= null;
             @Override
             public void onClick(View v) {
                 tt2.setText("Rs.150");
-                total = total_price +150.0;
+//                total = total_price +150.0;
                 Math.round(total);
                 tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal= true;
