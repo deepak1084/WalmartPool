@@ -41,7 +41,6 @@ public class CustomListAdapterForSubscribedList extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View customView = inflater.inflate(R.layout.group_list_row, parent, false);
-
         TextView grpName = (TextView) customView.findViewById(R.id.subs_group_name);
         TextView ownerName = (TextView) customView.findViewById(R.id.subs_owner_name);
         TextView grpAddress = (TextView) customView.findViewById(R.id.subs_group_address);
@@ -54,4 +53,5 @@ public class CustomListAdapterForSubscribedList extends BaseAdapter {
 
         return customView;
     }
+
 }

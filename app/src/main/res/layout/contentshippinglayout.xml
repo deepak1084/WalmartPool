@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/subscribed_group_list">
         <CheckBox
-            android:id="@+id/subs_grp_checkBox"
+            android:id="@+id/subs_grp_checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
