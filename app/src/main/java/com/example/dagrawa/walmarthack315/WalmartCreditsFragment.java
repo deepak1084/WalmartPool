@@ -47,7 +47,7 @@ public class WalmartCreditsFragment extends Fragment {
     setJsonValueInterface s = new setJsonValueInterface() {
         @Override
         public void SetJSONObject(JSONArray j) {
-            Log.i("deepak in credit fragment", j.toString());
+            Log.i("deepak in crit fragment", j.toString());
             for(int i=0;i<j.length();i++) {
                 try {
                     JSONObject ob = j.getJSONObject(i);

@@ -47,23 +47,23 @@ Context con= null;
         TextView tt = (TextView) findViewById(R.id.itemssize);
         tt.setText(String.valueOf(Count1));
         TextView tt1 = (TextView) findViewById(R.id.Subtotal_Amount);
-        tt1.setText("$" + String.valueOf(total_price));
+        tt1.setText("Rs." + String.valueOf(total_price));
 
         RadioButton rr = (RadioButton)findViewById(R.id.radioButton);
         RadioButton rr2 = (RadioButton)findViewById(R.id.radioButton2);
-        tt2.setText("$15");
-        total = total_price +15.0;
+        tt2.setText("Rs.250");
+        total = total_price +250.0;
         Math.round(total);
 
-        tt3.setText("$" + String.valueOf(Math.round(total)));
+        tt3.setText("Rs" + String.valueOf(Math.round(total)));
         rr.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                tt2.setText("$15");
-                 total= total_price + 15.0;
+                tt2.setText("Rs.250");
+                 total= total_price + 250.0;
                 Math.round(total);
-                tt3.setText("$" + String.valueOf(Math.round(total)));
+                tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal = false;
 
             }
@@ -72,10 +72,10 @@ Context con= null;
 
             @Override
             public void onClick(View v) {
-                tt2.setText("$5");
-                total = total_price +5.0;
+                tt2.setText("Rs.150");
+                total = total_price +150.0;
                 Math.round(total);
-                tt3.setText("$" + String.valueOf(Math.round(total)));
+                tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal= true;
             }
         });
@@ -90,9 +90,11 @@ Context con= null;
         //   tt.setText(String.valueOf(total_price));
         System.out.println(total_price);
         HashSet<Integer> position = (HashSet)intent.getSerializableExtra("set");
-        final String[] items = {"Apple iPhone 6s (Space Grey" +
-                ", 64GB)\n\n$649.00","Harry Potter and the Goblet of Fire\n\n$10.00","RCA Home Theatre System with Bluetooth\n\n$90.00","RCA gaming controller\n\n$49.99","SanDisk Ultra MicroSD 64GB\n\n$30.00","Photron Tripod Stand\n\n$17.00"};
-        int[] itemImages = {R.drawable.iphone,R.drawable.book,R.drawable.home_theatre,R.drawable.controller,R.drawable.sdcard,R.drawable.tripod};
+        final String[] items = {"Anarkali Dress Material" +
+                "\nRs.349.00","Hoodie\n Rs.200.00","Printed T-Shirt\n Rs.90.00","Karya Blue Jean\n" +
+                "\n\nRs.490.00","Campus Black Shoes" +
+                "\n\nRs.330.00","Bonkerz Blue Clogs\nRs.269.00"};
+        int[] itemImages = {R.drawable.iphone,R.drawable.prod2,R.drawable.prod3,R.drawable.prod4,R.drawable.prod5,R.drawable.prod6};
         final String[] items1 = new String[position.size()];
         int[] itemImages1 = new int[position.size()];
         int j =0 ;

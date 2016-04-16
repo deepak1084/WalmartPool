@@ -68,9 +68,11 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        final String[] items = {"Apple iPhone 6s (Space Grey" +
-                ", 64GB)\n\n$649.00","Harry Potter and the Goblet of Fire\n\n$10.00","RCA Home Theatre System with Bluetooth\n\n$90.00","RCA gaming controller\n\n$49.99","SanDisk Ultra MicroSD 64GB\n\n$30.00","Photron Tripod Stand\n\n$17.00"};
-        int[] itemImages = {R.drawable.iphone,R.drawable.book,R.drawable.home_theatre,R.drawable.controller,R.drawable.sdcard,R.drawable.tripod};
+        final String[] items = {"Anarkali Dress Material" +
+                "\nRs.349.00","Hoodie\n Rs.200.00","Printed T-Shirt\n Rs.90.00","Karya Blue Jean\n" +
+                "\n\nRs.490.00","Campus Black Shoes" +
+                "\n\nRs.330.00","Bonkerz Blue Clogs\nRs.269.00"};
+        int[] itemImages = {R.drawable.iphone,R.drawable.prod2,R.drawable.prod3,R.drawable.prod4,R.drawable.prod5,R.drawable.prod6};
         //  ListAdapter myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
         ListAdapter myAdapter = new CustomAdapter(this.getActivity(), items, itemImages);
@@ -83,7 +85,7 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String item = String.valueOf(parent.getItemAtPosition(position));
-                        String price = item.substring(item.lastIndexOf('$') + 1);
+                        String price = item.substring(item.lastIndexOf("Rs.") + 3);
                         TotalPrice = TotalPrice + Double.parseDouble(price);
                         posn.add(position);
 

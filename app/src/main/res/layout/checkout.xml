@@ -49,7 +49,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expedite Delivery($15 Shipping Charge)"
+            android:text="Next Day Delivery(Rs.250 Shipping Charge)"
             android:textStyle="bold"
             android:id="@+id/radioButton"
             android:layout_weight="0.04"
@@ -63,7 +63,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Standard Delivery($5 Shipping Charge)"
+            android:text="Standard Delivery(Rs.150 Shipping Charge)"
             android:textStyle="bold"
 
             android:id="@+id/radioButton2"
