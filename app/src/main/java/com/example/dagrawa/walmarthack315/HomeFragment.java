@@ -71,7 +71,6 @@ public class HomeFragment extends Fragment {
                 "\n\nRs.490.00","Campus Black Shoes" +
                 "\n\nRs.330.00","Bonkerz Blue Clogs\nRs.269.00"};
         int[] itemImages = {R.drawable.iphone,R.drawable.prod2,R.drawable.prod3,R.drawable.prod4,R.drawable.prod5,R.drawable.prod6};
-        //  ListAdapter myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
         ListAdapter myAdapter = new CustomAdapter(this.getActivity(), items, itemImages);
         ListView dinesListView = (ListView) rootView.findViewById(R.id.listView);

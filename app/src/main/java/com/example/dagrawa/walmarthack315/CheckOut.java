@@ -24,7 +24,7 @@ import java.util.Iterator;
 public class CheckOut extends Activity {
     TextView tt2 ;
     TextView tt3;
-    Double total_price = new Double(0);
+    Double total_price;
     Double total = new Double(0);
     Context con= null;
     boolean normal = true;
@@ -48,7 +48,7 @@ public class CheckOut extends Activity {
         RadioButton rr = (RadioButton)findViewById(R.id.radioButton);
         RadioButton rr2 = (RadioButton)findViewById(R.id.radioButton2);
         tt2.setText("Rs.250");
-//        total = total_price +250.0;
+        total = total_price +250.0;
         Math.round(total);
 
         tt3.setText("Rs" + String.valueOf(Math.round(total)));
@@ -57,7 +57,7 @@ public class CheckOut extends Activity {
             @Override
             public void onClick(View v) {
                 tt2.setText("Rs.250");
-//                 total= total_price + 250.0;
+                 total= total_price + 250.0;
                 Math.round(total);
                 tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal = false;
@@ -69,7 +69,7 @@ public class CheckOut extends Activity {
             @Override
             public void onClick(View v) {
                 tt2.setText("Rs.150");
-//                total = total_price +150.0;
+                total = total_price +150.0;
                 Math.round(total);
                 tt3.setText("Rs." + String.valueOf(Math.round(total)));
                 normal= true;
@@ -107,7 +107,7 @@ public class CheckOut extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(con,ShippingCart.class);
                 intent.putExtra("ShippingMethod",normal);
-                intent.putExtra("TotalPrice", total);
+                intent.putExtra("TotalPrice", total_price);
                 startActivity(intent);
             }
         });
