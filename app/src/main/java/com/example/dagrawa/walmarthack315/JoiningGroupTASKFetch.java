@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,10 +16,13 @@ import java.net.URL;
  */
 public class JoiningGroupTASKFetch extends AsyncTask<Void,Void,JSONArray> {
     setJsonValueInterface setInterface=null;
-    String zipCode = null;
-    public JoiningGroupTASKFetch(setJsonValueInterface s, String zipCode) {
+    String par = null;
+    String val = null;
+
+    public JoiningGroupTASKFetch(setJsonValueInterface s, String param,String val) {
     this.setInterface = s;
-        this.zipCode = zipCode;
+        this.par = param;
+        this.val = val;
     }
 
     @Override
@@ -27,7 +31,8 @@ public class JoiningGroupTASKFetch extends AsyncTask<Void,Void,JSONArray> {
         JSONArray j = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://172.16.100.234:8081/userbygrps/"+zipCode);
+            Log.i("Deepak","http://10.0.12.186:3000/fetch_group?"+par+"="+val);
+            url = new URL("http://10.0.12.186:3000/fetch_group?"+par+"="+val);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
 
@@ -45,7 +50,10 @@ public class JoiningGroupTASKFetch extends AsyncTask<Void,Void,JSONArray> {
 
             br.close();
             String retString=new String(sb.toString());
-            j = new JSONArray(retString);
+            JSONObject ob = new JSONObject(retString);
+            if(ob!=null) {
+                j = ob.getJSONArray("groups");
+            }
             Log.i("deepak",retString);
 
     } catch (Exception e) {

@@ -12,6 +12,7 @@ import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class ShippingCart extends Activity
          {
     Button button;
     ListView listView;
-    ArrayAdapter<String> adapter;
+    ListAdapter adapter;
     Activity con =null;
     String str = null;
     Double totalPrice = 0.0;
@@ -48,17 +49,16 @@ Integer shipCost = 0;
             @Override
             public void SetJSONObject(JSONArray j) {
                 if (j != null) {
-                    ArrayList<String> sports = new ArrayList<>();
+                    ArrayList<GroupFetchAtShippingPage> sports = new ArrayList<>();
                     for (int i = 0; i < j.length(); i++) {
                         try {
-                            sports.add(j.getJSONObject(i).getString("group_id"));
+                            sports.add(new GroupFetchAtShippingPage(j.getJSONObject(i).getString("name"),j.getJSONObject(i).getString("group_id"),j.getJSONObject(i).getString("address"),j.getJSONObject(i).getString("zip"),j.getJSONObject(i).getString("group_total")));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
 
-                    adapter = new ArrayAdapter<String>(con,
-                            android.R.layout.simple_list_item_multiple_choice, sports);
+                    adapter = new CustomAdapterGroupFetchAtShipping(con, sports);
                     listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     listView.setAdapter(adapter);
 
@@ -75,6 +75,7 @@ Integer shipCost = 0;
             shipCost = 15;
             waitTime = 5;
         }
+
         new ShippingCartGroupFetch(s,str).execute();
 //        button.setOnClickListener(this);
         Button but = (Button) findViewById(R.id.submitToPersonal);
@@ -98,7 +99,7 @@ Integer shipCost = 0;
                     int position = checked.keyAt(i);
                     // Add sport if it is checked i.e.) == TRUE!
                     if (checked.valueAt(i))
-                        selectedItems.add(adapter.getItem(position));
+                        selectedItems.add(((GroupFetchAtShippingPage)adapter.getItem(position)).getGrpId());
                 }
 
                 String[] outputStrArr = new String[selectedItems.size()];

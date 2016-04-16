@@ -37,6 +37,12 @@
         <item>@drawable/credits</item>
     </array>
 
+    <string-array name="group_search_options">
+        <item>name</item>
+        <item>group_id</item>
+        <item>zip</item>
+    </string-array>
+
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="title_activity_thank_you_page">ThankYouPage</string>

@@ -25,7 +25,8 @@ public class JoiningGroupSubscribe extends AsyncTask<JSONObject,Void,JSONArray> 
         JSONArray j = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://172.16.100.234:8081/userbygrps/");
+            url = new URL("http://10.0.12.186:3000/allocate_user_group");
+            Log.i("Deepak","http://10.0.12.186:3000/allocate_user_group");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json");

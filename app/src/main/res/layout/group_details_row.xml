@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="2pt"
+    android:paddingBottom="2pt"
+    android:layout_marginBottom="5pt">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/group_image"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:scaleType="center"
+                android:layout_marginRight="5pt"
+                android:src="@drawable/img_fridge"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/group_name"
+                android:text="Group Name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+            <TextView
+                android:id="@+id/owner_name"
+                android:text="Owner Name"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+            <TextView
+                android:id="@+id/group_address"
+                android:text="Address Text"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="15pt"
+                android:layout_height="15pt"
+                android:scaleType="center"
+                android:src="@android:drawable/ic_input_add"/>
+        </LinearLayout>
+ </LinearLayout>
