@@ -8,7 +8,8 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/listImageView"
-        android:src="@drawable/img_fridge"
+        android:src="@drawable/myntra_logo_small"
+        android:scaleType="fitCenter"
         android:layout_margin="5dp" />
 
     <TextView

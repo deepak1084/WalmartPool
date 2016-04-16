@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20px"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Order Id"
             android:textSize="50px"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80px"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Order Date"
             android:textSize="50px"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60px"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Order Amount"
             android:textSize="50px"
@@ -57,7 +57,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginLeft="20px"
-            android:layout_marginTop="5px"
             android:text="12345"
             android:textSize="50px"/>
 
@@ -66,8 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginLeft="160px"
-            android:layout_marginTop="5px"
+            android:layout_marginLeft="130px"
             android:text="16 Apr 2016"
             android:textSize="50px"/>
 
@@ -75,8 +73,7 @@
             android:id="@+id/OrderAmountValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120px"
-            android:layout_marginTop="5px"
+            android:layout_marginLeft="80px"
             android:text="1234/-" />
     </LinearLayout>
 
@@ -88,16 +85,17 @@
 
         <TextView
             android:id="@+id/Status"
-            android:layout_width="wrap_content"
+            android:layout_width="72dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
             android:width="90dp"
             android:height="30dp"
-            android:gravity="center"
-            android:text= "Status     ->"
-            android:textSize="60px"
+            android:gravity="left"
+            android:text= "Status"
+            android:layout_marginTop="5px"
+            android:textSize="50px"
             android:textColor="#009900"
-            android:textStyle="bold"
-            android:layout_weight="0.21" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/StatusValue"
@@ -105,9 +103,10 @@
             android:layout_height="wrap_content"
             android:width="90dp"
             android:height="30dp"
-            android:gravity="center"
+            android:gravity="left"
+            android:layout_marginTop="5px"
             android:text= "Packed"
-            android:textSize="60px"
+            android:textSize="50px"
             android:textColor="#cc9966"
             android:textStyle="bold"
             android:layout_weight="0.08" />
@@ -125,14 +124,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30px"
-            android:width="150px"
+            android:width="90px"
             android:height="30dp"
-            android:gravity="center"
+            android:gravity="left"
             android:text= "Groups"
-            android:textSize="60px"
+            android:textSize="50px"
             android:textColor="#009900"
             android:textStyle="bold"
-            android:layout_weight="0.21" />
+            android:layout_weight="0.47" />
 
         <TextView
             android:id="@+id/GroupValue"
@@ -141,12 +140,47 @@
             android:layout_marginLeft="20px"
             android:width="90dp"
             android:height="30dp"
-            android:gravity="center"
+            android:gravity="left"
             android:text= "Friends,Livspace,Kormangala"
-            android:textSize="60px"
+            android:textSize="50px"
             android:textColor="#cc9966"
             android:textStyle="bold"
             android:layout_weight="0.60" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/Saving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:width="150px"
+            android:height="30dp"
+            android:gravity="left"
+            android:text= "Saved"
+            android:textSize="50px"
+            android:textColor="#009900"
+            android:textStyle="bold"
+            android:layout_weight="0.13" />
+
+        <TextView
+            android:id="@+id/SavingValue"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:width="90dp"
+            android:height="30dp"
+            android:gravity="left"
+            android:text= "149 Rs."
+            android:textSize="50px"
+            android:textColor="#cc9966"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 

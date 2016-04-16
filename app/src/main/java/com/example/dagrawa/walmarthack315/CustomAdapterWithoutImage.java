@@ -48,7 +48,10 @@ creditArrayList = arrayList;
         TextView textView2 = (TextView) customView.findViewById(R.id.credits);
 
         textView.setText(creditArrayList.get(position).getOrderName());
-        textView2.setText("+ Rs."+creditArrayList.get(position).getRefund());
+        if (((int) creditArrayList.get(position).getRefund()) > 0)
+            textView2.setText("+ Rs. " + creditArrayList.get(position).getRefund());
+        else
+            textView2.setText("Rs. " + creditArrayList.get(position).getRefund());
 
         return customView;
     }

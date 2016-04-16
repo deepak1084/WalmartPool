@@ -49,6 +49,7 @@ ArrayList<OrderDetail> creditArrayList=null;
         TextView orderAmtText = (TextView) customView.findViewById(R.id.OrderAmountValue);
         TextView status = (TextView) customView.findViewById(R.id.StatusValue);
         TextView grps = (TextView) customView.findViewById(R.id.GroupValue);
+        TextView savingText = (TextView) customView.findViewById(R.id.SavingValue);
 
 
 
@@ -58,6 +59,7 @@ ArrayList<OrderDetail> creditArrayList=null;
 
         status.setText(creditArrayList.get(position).getStatus());
         grps.setText(creditArrayList.get(position).getGroups());
+        savingText.setText("Rs. " + creditArrayList.get(position).getSavings());
 
         return customView;
     }

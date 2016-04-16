@@ -17,9 +17,9 @@
                 android:id="@+id/group_image"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:scaleType="center"
+                android:scaleType="fitCenter"
                 android:layout_marginRight="5pt"
-                android:src="@drawable/img_fridge"/>
+                android:src="@drawable/myntra_logo_small" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
