@@ -30,7 +30,7 @@ public class CreditsFetchingTask extends AsyncTask<Void,Void,JSONArray> {
         JSONArray j = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://10.0.12.186:3000/orders");
+            url = new URL("http://10.0.12.186:3000/user_orders?user_id=1");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
 

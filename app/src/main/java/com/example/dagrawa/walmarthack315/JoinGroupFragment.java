@@ -70,7 +70,7 @@ public class JoinGroupFragment extends Fragment{
 
                             for (int i = 0; i < j.length(); i++) {
                                 try {
-                                    groupDetails.add(new GroupDetailsPOJO(j.getJSONObject(i).getString("group_id"),"Deepak",j.getJSONObject(i).getString("name"),j.getJSONObject(i).getString("address")));
+                                    groupDetails.add(new GroupDetailsPOJO(j.getJSONObject(i).getString("group_id"),"Deepak",j.getJSONObject(i).getString("name"),j.getJSONObject(i).getString("address"),0));
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }

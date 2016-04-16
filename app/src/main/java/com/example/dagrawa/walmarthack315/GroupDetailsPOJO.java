@@ -9,13 +9,18 @@ public class GroupDetailsPOJO {
     private String ownerName;
     private String name;
     private String address;
+    private float total;
 
+    public GroupDetailsPOJO(){
+        super();
+    }
 
-    public GroupDetailsPOJO(String id, String ownerName, String name, String address) {
+    public GroupDetailsPOJO(String id, String ownerName, String name, String address, float total) {
         this.id = id;
         this.ownerName = ownerName;
         this.name = name;
         this.address = address;
+        this.total = total;
     }
 
     public String getId() {
@@ -50,6 +55,14 @@ public class GroupDetailsPOJO {
         this.address = address;
     }
 
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
     @Override
     public String toString() {
         return "GroupDetailsPOJO{" +
@@ -57,6 +70,7 @@ public class GroupDetailsPOJO {
                 "ownerName='" + ownerName + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
+                ", total='" + total + '\'' +
                 '}';
     }
 }
