@@ -48,11 +48,29 @@ public class WalmartCreditsFragment extends Fragment {
         @Override
         public void SetJSONObject(JSONArray j) {
             Log.i("deepak in crit fragment", j.toString());
-            for(int i=0;i<j.length();i++) {
-                try {
-                    JSONObject ob = j.getJSONObject(i);
-                    arrayList.add(new CreditClass(ob.getString("order_no"),Integer.parseInt(ob.getString("ship_discount"))));
-                    ListAdapter myAdapter = new CustomAdapterWithoutImage(context,arrayList);
+            if(j!=null) {
+                Log.i("In orders fragment", j.toString());
+                for(int i=0;i<j.length();i++) {
+                    try {
+                        JSONObject ob = j.getJSONObject(i);
+                        JSONArray gArry = ob.getJSONArray("groups");
+                        String groupsValue = "";
+                        if (gArry != null) {
+                            for (int k = 0; k < gArry.length(); k++) {
+                                groupsValue += gArry.getJSONObject(k).getString("name");
+                                if (k != gArry.length() - 1) {
+                                    groupsValue += ",";
+                                }
+                            }
+                        }
+                        arrayList.add(new CreditClass(ob.getString("order_id"),Integer.parseInt(ob.getString("saving"))));
+//
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                ListAdapter myAdapter = new CustomAdapterWithoutImage(context,arrayList);
                     ListView dinesListView = (ListView) root.findViewById(R.id.listView);
 
                     dinesListView.setAdapter(myAdapter);
@@ -67,9 +85,7 @@ public class WalmartCreditsFragment extends Fragment {
                             }
                     );
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
 
             }
         }
