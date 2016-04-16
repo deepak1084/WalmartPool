@@ -62,8 +62,6 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("total_price",TotalPrice);
                 intent.putExtra("set", (Serializable) posn);
                 intent.putExtra("Count",count);
-
-
                 startActivity(intent);
 
             }

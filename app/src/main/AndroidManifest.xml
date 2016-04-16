@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dagrawa.walmarthack315" >
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -8,24 +9,35 @@
         android:icon="@drawable/myntralogo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEND"/>
+
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="www.myntrapool.com" android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".CheckOut"></activity>
-        <activity android:name=".ShippingCart"></activity>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity android:name=".CheckOut" />
+        <activity android:name=".ShippingCart" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
 
+        <activity
+            android:name=".ThankYouPage"
+            android:label="@string/title_activity_thank_you_page" >
+        </activity>
     </application>
 
-
 </manifest>
-
-

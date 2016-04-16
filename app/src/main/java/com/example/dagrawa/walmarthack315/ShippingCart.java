@@ -79,14 +79,16 @@ Integer shipCost = 0;
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(con,ThankYouPage.class);
+
+                startActivity(intent);
             }
         });
         Button subComm = (Button) findViewById(R.id.submitToCommunity);
         subComm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_LONG).show();
+//                Toast.makeText(con,"Thank you for placing the order",Toast.LENGTH_LONG).show();
                 SparseBooleanArray checked = listView.getCheckedItemPositions();
                 ArrayList<String> selectedItems = new ArrayList<String>();
                 for (int i = 0; i < checked.size(); i++) {
@@ -125,7 +127,9 @@ Integer shipCost = 0;
                 }
 
         new ShippingCartGroupPost().execute(j);
+                Intent intent = new Intent(con,ThankYouPage.class);
 
+                startActivity(intent);
             }
         });
     }
