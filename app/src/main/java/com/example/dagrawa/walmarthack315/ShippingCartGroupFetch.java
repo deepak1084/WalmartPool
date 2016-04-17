@@ -28,7 +28,7 @@ public class ShippingCartGroupFetch extends AsyncTask<Void,Void,JSONArray> {
         JSONArray j = null;
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL("http://10.0.12.186:3000/fetch_group?user_id=1");
+            url = new URL("http://10.0.12.186:3000/fetch_group?user_id=2");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
 

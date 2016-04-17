@@ -72,7 +72,7 @@ public class ShippingCart extends Activity {
                 JSONObject j = new JSONObject();
 
                 try {
-                    j.put("user_id","1");
+                    j.put("user_id","2");
                     j.put("groups",groupsSubs);
                     j.put("shipping_price",150);
                     j.put("amount",totalPrice);

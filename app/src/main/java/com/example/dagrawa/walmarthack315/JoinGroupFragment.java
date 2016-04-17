@@ -97,7 +97,7 @@ public class JoinGroupFragment extends Fragment{
 
                                     JSONObject j = new JSONObject();
                                     try {
-                                        j.put("user_id","1");
+                                        j.put("user_id","2");
                                         j.put("group_id",g.getId());
 
 

@@ -53,7 +53,7 @@ public class CreateGroupFragment extends Fragment {
                     j.put("city", city.getText());
                     j.put("address", address.getText());
                     j.put("group_id",groupId.getText());
-                    j.put("user_id","1");
+                    j.put("user_id","2");
                     j.put("name",groupName.getText());
 
 
