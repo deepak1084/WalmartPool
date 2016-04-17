@@ -60,12 +60,19 @@ public class JoinGroupFragment extends Fragment{
                 Log.i("Deepak", String.valueOf(edit.getText()));
                 String positonSelct = (String) spinner.getSelectedItem();
                 Log.i("Deepak", positonSelct);
-
+                String positionValue = null;
+                if(positonSelct.equals("Group Name")) {
+                    positionValue = "name";
+                }else if(positonSelct.equals("Group Id")) {
+                    positionValue = "group_id";
+                }else {
+                    positionValue = "zip";
+                }
                 setJsonValueInterface s = new setJsonValueInterface() {
                     @Override
                     public void SetJSONObject(JSONArray j) {
                         if (j != null) {
-                            String positonSelct = (String) spinner.getSelectedItem();
+
                             List<GroupDetailsPOJO> groupDetails = new ArrayList<GroupDetailsPOJO>();
 
                             for (int i = 0; i < j.length(); i++) {
@@ -85,6 +92,7 @@ public class JoinGroupFragment extends Fragment{
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                     Log.i("Deepak","Event is coming");
                                     GroupDetailsPOJO g = (GroupDetailsPOJO) parent.getItemAtPosition(position);
+
 
 
                                     JSONObject j = new JSONObject();
@@ -107,7 +115,7 @@ public class JoinGroupFragment extends Fragment{
                 };
 
 
-                new JoiningGroupTASKFetch(s,positonSelct,value).execute();
+                new JoiningGroupTASKFetch(s,positionValue,value).execute();
 
             }
         });

@@ -38,9 +38,9 @@
     </array>
 
     <string-array name="group_search_options">
-        <item>name</item>
-        <item>group_id</item>
-        <item>zip</item>
+        <item>Group Name</item>
+        <item>Group Id</item>
+        <item>Zipcode</item>
     </string-array>
 
 
